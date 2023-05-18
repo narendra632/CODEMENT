@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/login.css')}}" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="drop">
+        <div class="content">
+          <h3>Admin Login</h3>
+          <form action="/dashboard", method="post">
+            <div class="inputBox">
+              <input type="text" placeholder="User name" id="uname" name="uname" required>
+            </div>
+            <div class="inputBox">
+              <input type="password" placeholder="password" id="pass" name="pass" required>
+            </div>
+            <div class="inputBox">
+              <input type="submit" value="Log in" />
+            </div>
+          </form>
+        </div>
+      </div>
+      
+      <a href="/" class="btns signup">Back</a>
+      <a href="#" class="btns">Only for <br> Club Heads</a>
+    </div>
+  </body>
+</html>

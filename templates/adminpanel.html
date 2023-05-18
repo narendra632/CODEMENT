@@ -1,0 +1,32 @@
+
+<h2>Messages</h2>
+<a href="/logout"><button class="">LOGOUT</button></a>
+
+<hr>
+<h1>Manage Contacts</h1>
+        <table class="table">
+            <thead>
+                <tr style="background-color: rgb(64, 134, 167);">
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Message</th>
+                    <th>Date</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for contact in contacts %}
+                <tr>
+                    <td>{{contact.name}}</td>
+                    <td>{{contact.email}}</td>
+                    <td>{{contact.message}}</td>
+                    <td>{{contact.date}}</td>
+                    <td><a href="/condel/{{contact.sr_no}}"><button class="">Delete</button></a></td>
+
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+        </table>

@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CODEMENT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0>
+
+    <link rel='shortcut icon' href="{{ url_for('static', filename='club.png')}}" type='image/x-icon'>
+
+    <!-- HOSTED -->
+    <link href="css?family=Open+Sans:400,600,700,600italic,300italic,400italic,300,700italic,800italic,800" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='fonts/mdi/css/materialdesignicons.min.css')}}"  media="all" rel="stylesheet">
+  
+    <!-- LOCAL -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/about.css')}}">
+    
+
+    <!-- HOSTED -->
+    <script src="{{ url_for('static', filename='ajax/prefixfree.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='ajax/jquery.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='ajax/jquery.mixitup.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='ajax/jquery.waypoints.min.js')}}"></script>
+
+
+    <!-- LOCAL -->
+    <script src="{{ url_for('static', filename='scripts/pt.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='scripts/index.js')}}"></script>
+    <script src="{{ url_for('static', filename='scripts/bootstrap.bundle.js')}}"></script>
+  </head>
+  <body>
+            <!--Message flashing-->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    <div class="alert alert-primary btn-close" role="alert">
+        <strong>{{message}}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <div class="">
+      <!-- HOME -->
+      <div class="modal-wrap flex">
+
+        <div class="mask"></div>
+        <div class="modal" id="modal">
+          <div class="carousel-wrap">
+            <div class="window">
+              <div id="carousel">
+                <div class="slide"></div>
+                <div class="slide"></div>
+                <div class="slide"></div>
+              </div>
+              <i class="mdi mdi-chevron-left" id="prev"></i>
+              <i class="mdi mdi-chevron-right" id="next"></i>
+            </div>
+          </div>
+          <div class="info-box">
+            <div class="title"></div>
+            <div class="tag"></div>
+            <div class="detail"></div>
+            <a href="#" target="_blank"><div class="button">
+                <i class="mdi mdi-open-in-new"></i>VIEW SITE
+              </div></a>
+          </div>
+          <i class="close mdi mdi-close"></i>
+        </div>
+      </div>
+
+      <section id="home" class="flex height-fix">
+        <div id="pt" class="canvas"></div>
+        <div class="flex">
+          <div class="text">
+            <span class="highlight">CODEMENT</span>.
+            <br>
+            Environment for Coders
+          </div>
+
+          <div class="button page-link" dest="about">
+            Explore <i class="mdi mdi-arrow-right"></i>
+          </div>
+
+          <nav class="flex">
+            <div class="link-wrap">
+              <div class="active page-link" dest="home">home</div>
+              <div class="page-link" dest="about">Oceans</div>
+              <div class="page-link" dest="portfolio">Let's Start</div>
+              <div class="page-link" dest="contact">Querybox</div>
+            </div>
+            <i class="mdi mdi-menu"></i>
+          </nav>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about">
+        <div class="container flex">
+          <div class="header waypoint" data-animation="slide-in-left">
+            OCEANS
+          </div>
+          <div class="header-bar waypoint" data-animation="slide-in-left" data-delay=".5s"></div>
+          <div class="flex row label-wrap">
+
+            <div class="flex row-gt-sm ">
+              <div class="flex bullet-wrap "  style="padding-right: 40px; padding-left: 40px;" >
+                <div class="hex-wrap waypoint" data-animation="flip-in-x">
+                  <a href="https://www.geeksforgeeks.org/roadmap-to-become-a-web-developer-in-2022/" target="_blank">
+                    <img src="{{ url_for('static', filename='img/webd.png')}}" alt="" height="85px" width="110px">
+                  </a>
+                </div>
+                <br>
+                <div class="waypoint" data-animation="fade-in">
+                  <div class=" bold">Web <br> Development</div>
+                </div>
+              </div>
+
+              <div class="flex bullet-wrap " style="padding-right: 40px; padding-left: 40px;">
+                <div class="hex-wrap waypoint" data-animation="flip-in-x" data-delay=".2s">
+                  <a href="https://workat.tech/problem-solving/article/competitive-programming-complete-roadmap-from-scratch-sbcrmnxb1sfg" target="_blank">
+                    <img src="{{ url_for('static', filename='img/cp.png')}}" alt="" height="85px" width="85px">
+                  </a>
+                </div>
+                <br>
+                <div class="waypoint" data-animation="fade-in" data-delay=".2s">
+                  <div class=" bold">Competitive <br> Programming</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex row-gt-sm">
+              <div class="flex bullet-wrap " style="padding-right: 40px;">
+                <div class="hex-wrap waypoint" data-animation="flip-in-x" data-delay=".4s">
+                  <a href="https://github.com/WeMakeDevs/roadmaps/tree/main/Android-Development" target="_blank">
+                    <img src="{{ url_for('static', filename='img/appd.png')}}" alt="" height="85px" width="85px">
+                  </a>
+                </div>
+                <br>
+                <div class="waypoint" data-animation="fade-in" data-delay=".4s">
+                  <div class=" bold">App <br> Development</div>
+                </div>
+              </div>
+
+              <div class="flex bullet-wrap " style="padding-right: 40px;">
+                <div class="hex-wrap waypoint" data-animation="flip-in-x" data-delay=".6s">
+                  <a href="https://medium.datadriveninvestor.com/roadmap-to-becoming-a-game-developer-in-2022-128fed2df6c5" target="_blank">
+                    <img src="{{ url_for('static', filename='img/gamed.png')}}" alt="" height="90px" width="90px">
+                  </a>
+                </div>
+                <br>
+                <div class="waypoint" data-animation="fade-in" data-delay=".6s">
+                  <div class=" bold">Game <br> Development</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex row-gt-sm">
+              <div class="flex bullet-wrap " style="padding-right: 40px;">
+                <div class="hex-wrap waypoint" data-animation="flip-in-x" data-delay=".8s">
+                  <a href="https://bootcamp.uxdesign.cc/the-self-taught-ui-ux-designer-roadmap-in-2021-aa0f5b62cecb" target="_blank">
+                    <img src="{{ url_for('static', filename='img/design.png')}}" alt="" height="90px" width="90px">
+                  </a>
+                </div>
+                <br>
+                <div class="waypoint" data-animation="fade-in" data-delay=".8s">
+                  <div class="bold">Design</div>
+                </div>
+              </div>
+
+              <div class="flex bullet-wrap " style="padding-right: 20px;">
+                <div class="hex-wrap waypoint" data-animation="flip-in-x" data-delay="1s">
+                  <a href="https://github.com/s0md3v/be-a-hacker" target="_blank">
+                    <img src="{{ url_for('static', filename='img/eh.png')}}" alt="" height="85px" width="85px">
+                  </a>
+                </div>
+                <br>
+                <div class="waypoint" data-animation="fade-in" data-delay="1s">
+                  <div class="bold">Cyber Security &<br>Ethical Hacking</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="flex row label-wrap">
+
+            <div class="flex row-gt-sm ">
+              <div class="flex bullet-wrap "  style="padding-right: 40px; padding-left: 40px;" >
+                <div class="hex-wrap waypoint" data-animation="flip-in-x" data-delay="1.2s">
+                  <a href="https://github.com/WeMakeDevs/roadmaps/tree/main/Open-Source" target="_blank">
+                    <img src="{{ url_for('static', filename='img/opens.png')}}" alt="" height="85px" width="110px">
+                  </a>
+                </div>
+                <br>
+                <div class="waypoint" data-animation="fade-in" data-delay="1.2s">
+                  <div class=" bold">Open Source</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex row-gt-sm ">
+              <div class="flex bullet-wrap "  style="padding-right: 40px;" >
+                <div class="hex-wrap waypoint" data-animation="flip-in-x" data-delay="1.4s">
+                  <a href="https://github.com/WeMakeDevs/roadmaps/tree/main/Blockchain" target="_blank">
+                    <img src="{{ url_for('static', filename='img/blockc.png')}}" alt="" height="85px" width="110px">
+                  </a>
+                </div>
+                <br>
+                <div class="waypoint" data-animation="fade-in" data-delay="1.4s">
+                  <div class=" bold">Blockchain</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex row-gt-sm ">
+              <div class="flex bullet-wrap "  style="padding-right: 40px;" >
+                <div class="hex-wrap waypoint" data-animation="flip-in-x" data-delay="1.6s">
+                  <a href="https://github.com/WeMakeDevs/roadmaps/tree/main/DevOps" target="_blank">
+                    <img src="{{ url_for('static', filename='img/devops.png')}}" alt="" height="85px" width="110px">
+                  </a>
+                </div>
+                <br>
+                <div class="waypoint" data-animation="fade-in" data-delay="1.6s">
+                  <div class=" bold">Devops</div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+
+          <div class="skills-wrapper flex row-gt-sm">
+            <div class="flex flex-50-gt-sm waypoint" data-animation="slide-in-left">
+              <div class="label bold">
+                <h1 style="color:rgb(10, 10, 83)";> CODEMENT </h1></div>
+              <div>
+                <p>
+                  <h2 class="text"> Let's create together an <b class="bo">Environment </b>for coders, where we <b class="bo">Learn & Code</b> together.
+                    Where we <b class="bo"> Upskill & Grow </b>together.
+                  </h2>
+                </p>
+
+              </div>
+            </div>
+            <div class="flex flex-50-gt-sm waypoint bars-wrap" data-animation="slide-in-right">
+              <iframe width="300" height="200" src="https://www.youtube.com/embed/t7RnPG_wP_k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+          </div>
+          <br><br>
+          
+
+          <div  id="comments" class="flex flex-gt-sm waypoint" data-animation="slide-in-right">
+            <h1 style="color:rgb(10, 10, 83)";">How our Club works !!</h1>
+            <h3>
+            <ul style=" color: black; ">
+              <strong> 
+              <li>We Club heads will guide you for anything that you wish to learn.</li>
+              <li>All club members will learn and upgrade their skills.</li>
+              <li>After a certain level of experience members will join with us to work together on club projects</li> 
+              </strong>
+            </ul>
+            </h3>
+          </div>
+          <br>
+
+
+          <div id="comments" class="flex flex-gt-sm waypoint" data-animation="slide-in-left" >
+            <h4>
+            <ul>
+              <h1 class="bo">Lessons worth Remembering</h1>
+              <li>
+                  <h2>
+                    <b style="color: rgb(170, 17, 17);">
+                      Code Everyday
+                    </b>
+                  </h2>
+                
+                  <div class="comcont">
+                    <p style="color: black;">As a growing Engineer, the best thing you could do is code everyday. Coding is indeed amongst the fastest growing
+                      fields. There are thousands of opportunities waiting for you, so code everyday & never miss twice.
+                    </p>
+                  </div>
+              </li>
+              <li>
+                  <h2>
+                    <b style="color: rgb(170, 17, 17);">
+                      Skills over Degree
+                    </b>
+                  </h2>
+                  <div class="comcont">
+                    <p style="color: black;">Long gone those days where your marks on the sheet mattered. This is the era of skills where what you can do & how 
+                      good you can do have more dynamics over a degree.
+                    </p>
+                  </div>
+              </li>
+              <li>
+                  <h2>
+                    <b style="color: rgb(170, 17, 17);">
+                      Self Learning
+                    </b>
+                  </h2>
+                  <div class="comcont">
+                    <p style="color: black;">Anything that you wish to learn is just a few clicks away. What you really need is the right mindset to learn.
+                      build constructive habits & take constructive actions. Explore Everything & Learn Everyday.
+                    </p>
+                  </div>
+              </li>
+            </ul>
+            </h4>
+          </div>
+          <br>
+          <b style="color: rgb(10, 10, 83);">
+          <h1>
+            <div class="clear" style="text-align: center;">How can you say Sky is the limit,</div>
+          </h1>
+          <h1>
+            <div class="clear" style="text-align: center;">When there is a Foot on the Moon.</div>
+          </h1>
+          </b>
+
+        </div>
+      </section>
+
+      <!-- PORTFOLIO -->
+      <section class="flex" id="portfolio">
+        <div class="header waypoint" data-animation="slide-in-right">
+          Let's Start
+        </div>
+        <div class="header-bar waypoint" data-animation="slide-in-right" data-delay=".3s"></div>
+
+        <div class="filter-wrap waypoint" data-animation="fade-in">
+          <div class="flex row">
+            <div class="filter" data-filter="all"></div>
+            <div class="filter" data-filter=".rails"></div>
+            <div class="filter" data-filter=".react"></div>
+            <div class="filter" data-filter=".js"></div>
+          </div>
+          <div class="float-bar">
+            <div class="flex row">
+              <div class="filter" data-filter="all"></div>
+              <div class="filter" data-filter=".rails"></div>
+              <div class="filter" data-filter=".react"></div>
+              <div class="filter" data-filter=".js"></div>
+            </div>
+          </div>
+        </div>
+
+        <div id="gallery" class="container flex row wrap waypoint">
+          <div class="mix react" data-my-order="1">
+            <div>
+              <div class="card"></div>
+              <div class="text">
+                <div class="bold">Web Development</div>
+                <span class="highlight"></span>
+              </div>
+              <a href="https://www.geeksforgeeks.org/roadmap-to-become-a-web-developer-in-2022/" target="_blank"><div class="button">DIVE IN</div></a>
+            </div>
+          </div>
+
+          <div class="mix react" data-my-order="1">
+            <div>
+              <div class="card"></div>
+              <div class="text">
+                <div class="bold">Competitive Programming</div>
+                <span class="highlight"></span>
+              </div>
+              <a href="https://workat.tech/problem-solving/article/competitive-programming-complete-roadmap-from-scratch-sbcrmnxb1sfg" target="_blank"><div class="button">DIVE IN</div></a>
+            </div>
+          </div>
+
+          <div class="mix react" data-my-order="1">
+            <div>
+              <div class="card"></div>
+              <div class="text">
+                <div class="bold">App Development</div>
+                <span class="highlight"></span>
+              </div>
+              <a href="https://github.com/WeMakeDevs/roadmaps/tree/main/Android-Development" target="_blank"><div class="button">DIVE IN</div></a>
+            </div>
+          </div>
+
+          <div class="mix js" data-my-order="1">
+            <div>
+              <div class="card"></div>
+              <div class="text">
+                <div class="bold">Game Development</div>
+                <span class="highlight"></span>
+              </div>
+              <a href="https://medium.datadriveninvestor.com/roadmap-to-becoming-a-game-developer-in-2022-128fed2df6c5" target="_blank"><div class="button">DIVE IN</div></a>
+            </div>
+          </div>
+
+          <div class="mix rails" data-my-order="1">
+            <div>
+              <div class="card"></div>
+              <div class="text">
+                <div class="bold">Designing</div>
+                <span class="highlight"></span>
+              </div>
+              <a href="https://bootcamp.uxdesign.cc/the-self-taught-ui-ux-designer-roadmap-in-2021-aa0f5b62cecb" target="_blank"><div class="button">DIVE IN</div></a>
+            </div>
+          </div>
+
+          <div class="mix js" data-my-order="1">
+            <div>
+              <div class="card"></div>
+              <div class="text">
+                <div class="bold">Cyber Security & Ethical Hacking</div>
+                <span class="highlight"></span>
+              </div>
+              <a href="https://github.com/s0md3v/be-a-hacker" target="_blank"><div class="button">DIVE IN</div></a>
+            </div>
+          </div>
+
+          <div class="mix js" data-my-order="1">
+            <div>
+              <div class="card"></div>
+              <div class="text">
+                <div class="bold">Open Source</div>
+                <span class="highlight"></span>
+              </div>
+              <a href="https://github.com/WeMakeDevs/roadmaps/tree/main/Open-Source" target="_blank"><div class="button">DIVE IN</div></a>
+            </div>
+          </div>
+
+          <div class="mix js" data-my-order="1">
+            <div>
+              <div class="card"></div>
+              <div class="text">
+                <div class="bold">Blockchain</div>
+                <span class="highlight"></span>
+              </div>
+              <a href="https://github.com/WeMakeDevs/roadmaps/tree/main/Blockchain" target="_blank"><div class="button">DIVE IN</div></a>
+            </div>
+          </div>
+
+          <div class="mix js" data-my-order="1">
+            <div>
+              <div class="card"></div>
+              <div class="text">
+                <div class="bold">Devops</div>
+                <span class="highlight"></span>
+              </div>
+              <a href="https://github.com/WeMakeDevs/roadmaps/tree/main/DevOps" target="_blank"><div class="button">DIVE IN</div></a>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+
+      <!-- BLOG -->
+      <section id="blog">
+        <div class="container flex">
+          <div class="header waypoint" data-animation="slide-in-left">Coding Channels</div>
+          <div class="header-bar waypoint" data-animation="slide-in-left" data-delay=".5s"></div>
+
+          <div class="flex row wrap">
+            <div class="flex row-gt-sm">
+              <a href="https://www.youtube.com/@CodeWithHarry" target="_blank">
+                <div class="blog-wrap waypoint" data-animation="fade-in">
+                  <div class="fade-wrap">
+                    <div class="thumb" id="thumb-1"></div>
+                    <div class="label bold">Code With Harry</div>
+                    <div class="bar"></div>
+                    <div class="text">
+                      God of Programming, Best quality courses in hindi about Python, Java, Javascript, App Dev, Web Dev & what not. Project 
+                      based learning.
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <a href="https://www.youtube.com/@ApnaCollegeOfficial" target="_blank">
+                <div class="blog-wrap waypoint" data-animation="fade-in" data-delay=".2s">
+                  <div class="fade-wrap">
+                    <div class="thumb" id="thumb-2"></div>
+                    <div class="label bold">Apna College</div>
+                    <div class="bar"></div>
+                    <div class="text">
+                      It's our Aman Bhaiya's Channel with everything about coding & placement, India's most loved channel by College
+                      students. Full C & C++ courss & Beginner Web Development.
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="flex row-gt-sm">
+              <a href="https://www.youtube.com/@freecodecamp" target="_blank">
+                <div class="blog-wrap waypoint" data-animation="fade-in" data-delay=".4s">
+                  <div class="fade-wrap">
+                    <div class="thumb" id="thumb-3"></div>
+                    <div class="label bold">FreeCodeCamp</div>
+                    <div class="bar"></div>
+                    <div class="text">
+                      Preety much everything about coding in English. Devops, Cyber Security, Game development with python & Unity.
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <a href="https://www.youtube.com/@CodingNinjasIndia/featured" target="_blank">
+                <div class="blog-wrap waypoint" data-animation="fade-in" data-delay=".6s">
+                  <div class="fade-wrap">
+                    <div class="thumb" id="thumb-4"></div>
+                    <div class="label bold">Coding Ninjas</div>
+                    <div class="bar"></div>
+                    <div class="text">Professional platform for learning data Science & DSA. Provides great certified courses
+                      and complete placement assistance.
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+
+      <!-- CONTACT -->
+      <section id="contact">
+        <svg preserveaspectratio="none" viewbox="0 0 100 102" height="75" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" class="svgcolor-light">
+          <path d="M0 0 L50 100 L100 0 Z" fill="white" stroke="white"></path>
+        </svg>
+        <div class="container flex">
+          <div class="header waypoint" data-animation="slide-in-left">
+            <a href="/dashboard"> CONTACT </a>
+          </div>
+          <div class="header-bar waypoint" data-animation="slide-in-right" data-delay=".25s"></div>
+          <div class="highlight waypoint" data-animation="slide-in-right" data-delay=".5s">
+            Have a question ? Reach out to us!!
+          </div>
+          <form class="waypoint" data-animation="pop-in" data-delay=".5s" id="" action="/" method="post" name="sentMessage">
+            <input placeholder="Name" id="name" type="text" name="name" required="" maxlength="40">
+            <input placeholder="Enter email" type="email" id="email" name="email" required="" maxlength="40">
+            <textarea placeholder="Your Message" type="text" id="message" name="message" required="" maxlength="700"></textarea>
+            <div id="success">
+              <div>
+                Your message was sent successfully. Thanks!<span id="close" class="mdi mdi-close"></span>
+              </div>
+            </div>
+            <input class="button" type="submit" id="submit" value="SUBMIT">
+          </form>
+        </div>
+      </section>
+
+      <footer>
+        <i class="mdi mdi-chevron-double-up page-link" dest="home"></i>
+
+        <div class="icon-wrap flex row">
+          <a href="https://www.linkedin.com/in/narendra-rathore-2b06a1222/" target="_blank">
+            <div class="flex icon" id="icon-2">
+              <i class="mdi mdi-linkedin"></i>
+            </div>
+          </a>
+          <a href="https://chat.whatsapp.com/C6yXU9ep9oQ0fUrD2CwXK0" target="_blank"> 
+            <div class="flex icon" id="icon-3">
+              <i class="mdi mdi-whatsapp"></i>
+            </div>
+          </a>
+          <a href="https://www.youtube.com/@wiseangle" target="_blank">
+            <div class="flex icon" id="icon-4">
+              <i class="mdi mdi-youtube-play"></i>
+            </div>
+          </a>
+          <a href="mailto:codement13@gmail.com" target="_blank">
+            <div class="flex icon" id="icon-4">
+              <i class="mdi mdi-gmail"></i>
+            </div>
+          </a>
+          <a href="https://github.com/narendra632" target="_blank">
+            <div class="flex icon" id="icon-5">
+              <i class="mdi mdi-github-circle"></i>
+            </div>
+          </a>
+        </div>
+        <div class="info-box">
+          <div class="footnote">
+            CODEMENT - NCER <span class="highlight">&copy;2022</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+
+  </body>
+</html>
+
+<script src="{{ url_for('static', filename='scripts/canvas.js')}}"></script>

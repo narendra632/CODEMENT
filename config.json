@@ -1,0 +1,14 @@
+{
+    "params":
+    {
+        "local_server":"True",
+        "local_uri":"mysql://root:@localhost/codement",
+        "prod_uri":"mysql://root:@localhost/codement",
+        "title_name":"CODEMENT",
+        "admin_name":"codement",
+        "admin_password":"codem",
+
+        "user_about":""
+
+    }
+}
