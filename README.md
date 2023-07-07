@@ -19,9 +19,10 @@ This project was built using the following technologies:
 - CSS: A style sheet language for designing web pages
 - MySQL: A relational database management system
 - Full-Stack Development: A combination of front-end and back-end development
+- PythonAnywhere for hosting
 
 ## Website link
-- visit - codement.pythonanywhere.com/
+- visit - https://codement.pythonanywhere.com/
 
 ## Acknowledgements
 
